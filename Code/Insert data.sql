@@ -1,6 +1,3 @@
--- All inserts into the eight tables are done by the standard style with '' holding any string and numbers typed independently of any ''.
--- The eight table inserts are accomplished later in the audit_logging.sql file because it's created from a trigger.
-
 -- Insert into students table
 INSERT INTO students (student_id, first_name, last_name, date_of_birth, gender, contact_number, email_address)
 VALUES

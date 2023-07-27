@@ -1,6 +1,3 @@
--- All views are accomplished in the same format as was done in previous labs limiting the necessary columns from a table.
--- These views can be useful for statistic purposes or giving a general view to higher adminstation that doesn't need to be aware of additional details. 
-
 CREATE VIEW StudentsData AS
 SELECT student_id, first_name, last_name, email_address
 FROM students;

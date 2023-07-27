@@ -1,9 +1,12 @@
--- Data Entry for Audit
+-- Shows all the columns in the audit_logs table before the trigger.
+Select * from audit_logs;
 
+-- Creating trigger after an insert into students table inserting into audit log table 
 CREATE TRIGGER one_and_done.students_login
 AFTER INSERT ON one_and_done.students
 FOR EACH ROW
 
+    -- Inserts into audit log the event_type, current timestamp, student id that was just created, table_name, and description 
     INSERT INTO audit_logs (event_type, timestamp, user, table_name, description)
     VALUES ('log in', NOW(), NEW.student_id, 'students', 'Student information updated');
 
@@ -26,4 +29,5 @@ VALUES
 (29, 'Harper', 'Thomas', '2000-07-05', 'X', '222-333-4444', 'Harper.Thomas@gmail.com'), 
 (30, 'Elijah', 'Hernandez', '1997-09-30', 'M', '999-888-7777', 'Elijah.Hernandez@gmail.com');
 
+-- Shows all the columns in the audit_logs table after the trigger.
 Select * from audit_logs;

@@ -1,6 +1,9 @@
 -- Account Authentication
--- Student account creations 
+ 
+--Displays hashed passwords in hex format
 SET print_identified_with_as_hex = ON;
+
+-- Student account creations
 CREATE USER 'john.smith@gmail.com'@'localhost' IDENTIFIED WITH caching_sha2_password BY  '5srgrfvf' PASSWORD EXPIRE INTERVAL 180 DAY;
 CREATE USER 'emily.johnson@gmail.com'@'localhost' IDENTIFIED WITH caching_sha2_password BY '345gedsfvn' PASSWORD EXPIRE INTERVAL 180 DAY;
 CREATE USER 'michael.anderson@gmail.com'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'hnytrt56se' PASSWORD EXPIRE INTERVAL 180 DAY;
@@ -19,11 +22,12 @@ CREATE USER 'paige.brown@gmail.com'@'localhost' IDENTIFIED WITH caching_sha2_pas
 CREATE USER 'maura.jackson@gmail.com'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'g43dwsgr' PASSWORD EXPIRE INTERVAL 180 DAY;
 CREATE USER 'korro.white@gmail.com'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'j6tr45waq23' PASSWORD EXPIRE INTERVAL 180 DAY;
 
--- Authorizating Users with privileges 
+-- Authorizating Users with privileges
+
 -- Administrator privileges
 GRANT ALL ON one_and_done.* TO 'neri.trebor@gmail.com'@'localhost';
 
--- Select privileges for teachers to edit exam information
+-- Grant privileges for teachers to edit exam information
 GRANT SELECT, INSERT, UPDATE ON one_and_done.exams TO 
 'neri.trebor@gmail.com'@'localhost', 
 'alex.wilson@gmail.com'@'localhost', 
@@ -33,7 +37,7 @@ GRANT SELECT, INSERT, UPDATE ON one_and_done.exams TO
 'maura.jackson@gmail.com'@'localhost',
 'korro.white@gmail.com'@'localhost';
 
--- Select privileges for teachers to edit exam scheduling information
+-- Grant privileges for teachers to edit exam scheduling information
 GRANT SELECT, INSERT, UPDATE ON one_and_done.exam_scheduling TO 
 'neri.trebor@gmail.com'@'localhost', 
 'alex.wilson@gmail.com'@'localhost', 
@@ -43,7 +47,7 @@ GRANT SELECT, INSERT, UPDATE ON one_and_done.exam_scheduling TO
 'maura.jackson@gmail.com'@'localhost',
 'korro.white@gmail.com'@'localhost';
 
--- Select privileges for students to view subjects
+-- Grant privileges for students to view subjects
 GRANT SELECT ON one_and_done.subjects TO 
 'john.smith@gmail.com'@'localhost', 
 'emily.johnson@gmail.com'@'localhost', 
@@ -54,7 +58,7 @@ GRANT SELECT ON one_and_done.subjects TO
 'ethan.wilson@gmail.com'@'localhost',
 'autumn.robin@gmail.com'@'localhost';
 
--- Select privileges for students to view exam information 
+-- Grant privileges for students to view exam information 
 GRANT SELECT ON one_and_done.exams TO 
 'john.smith@gmail.com'@'localhost', 
 'emily.johnson@gmail.com'@'localhost', 
@@ -65,7 +69,7 @@ GRANT SELECT ON one_and_done.exams TO
 'ethan.wilson@gmail.com'@'localhost',
 'autumn.robin@gmail.com'@'localhost';
 
--- Select privileges for students to view test results
+-- Grant privileges for students to view test results
 GRANT SELECT ON one_and_done.results TO 
 'john.smith@gmail.com'@'localhost', 
 'emily.johnson@gmail.com'@'localhost', 
@@ -76,6 +80,7 @@ GRANT SELECT ON one_and_done.results TO
 'ethan.wilson@gmail.com'@'localhost',
 'autumn.robin@gmail.com'@'localhost';
 
+--Reload the grant tables and apply the changes made to the user privileges as well as show various users grants. 
 FLUSH PRIVILEGES;
 SHOW GRANTS FOR 'neri.trebor@gmail.com'@'localhost';
 SHOW GRANTS FOR 'alex.wilson@gmail.com'@'localhost';
