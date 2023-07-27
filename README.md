@@ -3,6 +3,8 @@ Data Security Project
 
 These 4 folders include all the information that is needed for the one and done project in Data Security. The first folder includes all the code that is involved in creating the database. Second folder includes the database itself with the backup file incase something happens. Third folder includes all the additional information that includes the pdf and docx files that describe the objectives, proposals, and evaluating the team members. Finally, the fourth folder includes all the screenshots that encompass all the screenshots present in the report. 
 
+36 sentences below 
+
 EER Diagram:
     - We created the EER diagram through creating all the tables in the model lining the tables up to coherently showcase the relationships highlighted through the foreign keys. 
 
@@ -53,7 +55,7 @@ iii. Data Encryption:
 iv. Auditing and Logging: 
     - In order to implement audit logs, we created a trigger that inserts into the audit_logs table after an insert is completed into the students table logging the new student. 
 
-v. Database Backup and Recovery: 33 
+v. Database Backup and Recovery:
     - In order to implement a backup and recovery, we utilized the mysqldump command to create a new backup of the database.
     - After storing the backup in our folder under testsss.sql, we deleted the database to clear the original.
     - Then we restored the database running a select all on the students table to show that all data was restored. 
