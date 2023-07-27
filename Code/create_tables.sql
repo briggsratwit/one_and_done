@@ -1,3 +1,13 @@
+-- The create_tables sql file creates the database and sets all the columns for the eight tables
+-- Five of the tables have one column eash that satisfy the five specific conditions set for validation rules. 
+-- The first table student satisfies the validation rule collection of allowed values checking whether gender is specifically M, F, or X. 
+-- If something else is inserted, it will error out that insert rejecting it.  
+-- The second table teachers satisfies the validation rule specific format by checking the phone number against the regexp specificed. 
+-- The regular expression matches strings that follow a specific pattern: three digits, a hyphen, three more digits, another hyphen, and finally, four digits creating a phone number
+-- The fifth table exams satisifes the validation rule default value by setting the maximum grade for any exam to be 100. 
+--The sixth table exam_scheduling satisfied the validation rule required field by setting the exam_id as not null
+--The seventh table results satisfied the validation rule of a range of allowed values checking whether a grade is between 0 and 100.
+
 CREATE DATABASE one_and_done;
 
 CREATE TABLE `one_and_done`.`students` (

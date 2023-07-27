@@ -1,3 +1,6 @@
+-- All queries are accomplished by utilizing mutliple tables with inner joins to combine tables utilizing the foreign keys
+-- The one function that we had to look into it was the DAYOFWEEK where one through represent seven correlate to Sunday to Saturday respectfully (https://www.w3schools.com/sql/func_mysql_dayofweek.asp).
+
 -- Advanced Query 1 
 -- Retrieve the student's id, teacher's id, subjects, and exams_id whose grade is greater or equal to 80
 SELECT r.student_id, s.teacher_id, r.exam_id, s.subject_name, r.grade
@@ -62,4 +65,3 @@ FROM exam_scheduling es
 INNER JOIN classrooms c ON es.classroom_id = c.classroom_id
 INNER JOIN subjects s ON c.subject_id = s.subject_id
 WHERE es.start_time  < '13:00:00';
---

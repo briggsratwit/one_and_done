@@ -1,3 +1,7 @@
+-- In order to maintain our database, we adjusted the results table by adding a column for teacher_id and then deleted the second to last record in the teachers table. 
+-- After deleting the record, we had to update the results table by inserting a teacher_id for each record. 
+-- Finally, creating a referenntial relationship between the two tables creating a foreign key and then showed the index from the results table to show the new key. 
+
 -- Inserting new field
 ALTER TABLE results
 ADD COLUMN teacher_id INT NOT NULL;
