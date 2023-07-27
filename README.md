@@ -53,11 +53,15 @@ iii. Data Encryption:
 iv. Auditing and Logging: 
     - In order to implement audit logs, we created a trigger that inserts into the audit_logs table after an insert is completed into the students table logging the new student. 
 
-v. Database Backup and Recovery:  
-    W
+v. Database Backup and Recovery: 33 
+    - In order to implement a backup and recovery, we utilized the mysqldump command to create a new backup of the database.
+    - After storing the backup in our folder under testsss.sql, we deleted the database to clear the original.
+    - Then we restored the database running a select all on the students table to show that all data was restored. 
 
 vi. Secure Data Transfer: 
-    W
+    - In order to implement secure data transfer we encrypted the connection through creating a SSL user. 
+    - This restricts all user accounts by limiting them to only connect to the database over SSL.
+    - We utilzied SSL as it's a protocol for encrypting Internet traffic and verifying server identity. 
 
 vii. Security Training and Best Practices: 
     - Follwing through this link that lists the 8 security common threats and best practices, we were able to implement some of these practices in the user authentican and authorization as well as access control files (https://satoricyber.com/mysql-security/mysql-security-common-threats-and-8-best-practices/). 
